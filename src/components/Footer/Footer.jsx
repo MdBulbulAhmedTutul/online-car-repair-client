@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-700 text-white text-center py-4">
+            <div className="bg-[#191919] text-white text-center py-4">
                 <p>Copyright © 2023 - All right reserved by Car-doctor Ltd</p>
             </div>
         </div>

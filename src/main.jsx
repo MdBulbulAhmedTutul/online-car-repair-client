@@ -12,6 +12,7 @@ import ErrorPage from './components/Erropage/ErrorPage';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import AuthProvider from './components/provider/AuthProvider';
+import DetailPage from './Pages/DetailsPage/DetailPage';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/details/:id',
+        element: <DetailPage></DetailPage>
       }
     ]
   },

@@ -4,7 +4,7 @@ import TeamCard from "../TeamCard/TeamCard";
 const Teams = () => {
     const [teams,setTeams] = useState([]);
     useEffect(() => {
-        fetch('/team.json')
+        fetch('http://localhost:5000/team')
         .then(res => res.json())
         .then(data => setTeams(data))
     },[])
