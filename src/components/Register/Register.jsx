@@ -2,14 +2,24 @@ import { Link } from 'react-router-dom';
 import loginImage from '../../assets/images/login/register.jpg';
 import { FaGooglePlusG } from 'react-icons/fa';
 const Register = () => {
+
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password)
+    }
     return (
-        <div className='flex items-center flex-col md:flex-row max-w-7xl mx-auto bg-gray-100 p-10 mt-7 mb-16'>
+        <div className='flex items-center flex-col md:flex-row max-w-7xl mx-auto bg-gray-100 p-10 mt-7 mb-16 '>
             <div className='w-full'>
                 <img className='w-full h-[500px]' src={loginImage} alt="" />
             </div>
-            <div className='w-full'>
+            <div className='w-full lg:ml-3'>
                 <h2 className='text-3xl font-semibold mb-4 text-center'>Please Register Now</h2>
-                <form>
+                <form onSubmit={handleRegister}>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
