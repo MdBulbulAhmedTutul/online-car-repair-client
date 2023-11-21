@@ -9,6 +9,8 @@ import {
 import Root from './components/Root/Root';
 import Home from './Pages/Home/Home';
 import ErrorPage from './components/Erropage/ErrorPage';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },
