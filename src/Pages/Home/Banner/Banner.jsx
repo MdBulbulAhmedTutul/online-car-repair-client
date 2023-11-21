@@ -13,7 +13,7 @@ import banner3 from '../../../assets/images/homeCarousel/3.jpg';
 import banner4 from '../../../assets/images/homeCarousel/4.jpg';
 const Banner = () => {
     return (
-        <div>
+        <div className="z-0">
             <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
@@ -25,20 +25,20 @@ const Banner = () => {
                 modules={[Navigation, Pagination]}
                 className="mySwiper"
             >
-                <SwiperSlide data-history="1" className="relative rounded-xl">
+                <SwiperSlide data-history="1" className="relative z-0 rounded-xl">
                     <div className="absolute w-full h-full bg-black opacity-30 rounded-xl"></div>
                     <img className="h-[550px] w-full rounded-xl" src={banner1} alt="" />
 
                 </SwiperSlide>
-                <SwiperSlide data-history="Slide 2" className="relative rounded-xl">
+                <SwiperSlide data-history="Slide 2" className="relative z-0 rounded-xl">
                 <div className="absolute w-full h-full bg-black opacity-30 rounded-xl"></div>
                     <img className="h-[550px] w-full" src={banner2} alt="" />
                 </SwiperSlide>
-                <SwiperSlide data-history="3" className="relative rounded-xl">
+                <SwiperSlide data-history="3" className="relative z-0 rounded-xl">
                 <div className="absolute w-full h-full bg-black opacity-30 rounded-xl"></div>
                     <img className="h-[550px] w-full" src={banner3} alt="" />
                 </SwiperSlide>
-                <SwiperSlide data-history="Slide 4" className="relative rounded-xl">
+                <SwiperSlide data-history="Slide 4" className="relative z-0 rounded-xl">
                 <div className="absolute w-full h-full bg-black opacity-30 rounded-xl"></div>
                     <img className="h-[550px] w-full" src={banner4} alt="" />
                 </SwiperSlide>
