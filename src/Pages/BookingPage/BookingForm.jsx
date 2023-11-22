@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/provider/AuthProvider";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const BookingForm = () => {
     const { user } = useContext(AuthContext);
@@ -26,9 +27,24 @@ const BookingForm = () => {
             price,
             email,
             service: _id,
-            img
+            img,
+            title
         }
-        console.log(order);
+        // console.log(order);
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.insertedId) {
+                    Swal.fire("Booking Successfull");
+                }
+            })
     }
     return (
         <div className="max-w-5xl mx-auto bg-gray-100 p-10 rounded-xl">
