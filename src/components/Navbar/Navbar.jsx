@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li className="ml-2"><NavLink to="/about">About</NavLink></li>
         <li className="ml-2"><NavLink to="/services">Services</NavLink></li>
-        <li className="ml-2"><NavLink to="/blog">Blog</NavLink></li>
+        <li className="ml-2"><NavLink to="/order">Order</NavLink></li>
         <li className="ml-2"><NavLink to="/contact">Contatct</NavLink></li>
     </>
     const handleLogout = () => {

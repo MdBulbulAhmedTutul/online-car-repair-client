@@ -15,6 +15,7 @@ import AuthProvider from './components/provider/AuthProvider';
 import DetailPage from './Pages/DetailsPage/DetailPage';
 import BookingPage from './Pages/BookingPage/BookingPage';
 import PrivateRouts from './components/routes/PrivateRouts';
+import OrderPage from './Pages/OrderPage/OrderPage';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/booking/:id',
         element: <PrivateRouts><BookingPage></BookingPage></PrivateRouts>
+      },
+      {
+        path: '/order',
+        element: <PrivateRouts><OrderPage></OrderPage></PrivateRouts>
       }
     ]
   },
