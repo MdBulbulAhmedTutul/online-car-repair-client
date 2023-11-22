@@ -15,6 +15,9 @@ const ServicesCard = ({ service }) => {
                     <FaArrowRight className="text-[#ff3438] text-2xl mr-5"></FaArrowRight>
                 </Link>
             </div>
+            <Link to={`/booking/${_id}`}>
+                <button className="bg-[#ff3438] text-white font-semibold px-4 py-2 rounded-lg mt-2">Book Now</button>
+            </Link>
         </div>
     );
 };

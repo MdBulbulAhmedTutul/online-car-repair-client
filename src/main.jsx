@@ -13,6 +13,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import AuthProvider from './components/provider/AuthProvider';
 import DetailPage from './Pages/DetailsPage/DetailPage';
+import BookingPage from './Pages/BookingPage/BookingPage';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <DetailPage></DetailPage>
+      },
+      {
+        path: '/booking/:id',
+        element: <BookingPage></BookingPage>
       }
     ]
   },
