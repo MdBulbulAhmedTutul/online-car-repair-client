@@ -1,8 +1,8 @@
-
+import image from '../../assets/images/404/404.jpg';
 const ErrorPage = () => {
     return (
         <div>
-            <h2>Sorry</h2>
+            <img className='w-full h-[100vh]' src={image} alt="" />
         </div>
     );
 };
