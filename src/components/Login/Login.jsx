@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImage from '../../assets/images/login/register.jpg';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { useContext } from 'react';
@@ -6,6 +6,9 @@ import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 const Login = () => {
     const { loginUser, googleLogin } = useContext(AuthContext);
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -16,6 +19,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 Swal.fire("Login Successfully!");
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error);

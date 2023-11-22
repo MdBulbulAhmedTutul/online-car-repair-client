@@ -5,13 +5,13 @@ const DetailsInfo = () => {
 
     const [details, setDetails] = useState([]);
     const singleData = useParams();
-    console.log(singleData)
+    // console.log(singleData)
     useEffect(() => {
         fetch(`http://localhost:5000/service/${singleData.id}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [singleData])
-    console.log(details);
+// console.log(details);
     const { img, title, description} = details;
     return (
         <div className="px-4">

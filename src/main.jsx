@@ -14,6 +14,7 @@ import Register from './components/Register/Register';
 import AuthProvider from './components/provider/AuthProvider';
 import DetailPage from './Pages/DetailsPage/DetailPage';
 import BookingPage from './Pages/BookingPage/BookingPage';
+import PrivateRouts from './components/routes/PrivateRouts';
 
 const router = createBrowserRouter([
   {
@@ -35,11 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <DetailPage></DetailPage>
+        element: <PrivateRouts><DetailPage></DetailPage></PrivateRouts>
       },
       {
         path: '/booking/:id',
-        element: <BookingPage></BookingPage>
+        element: <PrivateRouts><BookingPage></BookingPage></PrivateRouts>
       }
     ]
   },

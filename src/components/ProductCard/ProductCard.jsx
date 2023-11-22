@@ -1,6 +1,6 @@
 // eslint-disable-next-line react/prop-types
 const ProductCard = ({ product }) => {
-    console.log(product);
+    // console.log(product);
     // eslint-disable-next-line react/prop-types
     const { img, price, title } = product;
     return (
