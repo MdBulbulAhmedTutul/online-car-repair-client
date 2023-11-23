@@ -7,8 +7,9 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const { loginUser, googleLogin } = useContext(AuthContext);
     const location = useLocation();
-    console.log(location);
     const navigate = useNavigate();
+    console.log(location);
+    
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +20,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 Swal.fire("Login Successfully!");
-                navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location?.state : '/');
             })
             .catch(error => {
                 console.error(error);
@@ -31,6 +32,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 Swal.fire("Login Successfully!");
+                navigate(location?.state ? location?.state : '/');
             })
             .catch(error => {
                 console.error(error)
