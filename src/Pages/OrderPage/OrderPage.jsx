@@ -2,15 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/provider/AuthProvider";
 import TableRow from "./TableRow";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const OrderPage = () => {
     const { user } = useContext(AuthContext);
     const [bookins, setBokkingd] = useState([]);
     const url = `http://localhost:5000/singlebooking?email=${user.email}`;
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setBokkingd(data))
+        axios.get(url, { withCredentials: true })
+            .then(res => {
+                setBokkingd(res.data)
+            })
     }, [url])
 
     const handleDelete = id => {
