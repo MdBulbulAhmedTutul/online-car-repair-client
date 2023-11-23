@@ -3,10 +3,10 @@ import { AuthContext } from "../../components/provider/AuthProvider";
 // import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
-const TableRow = ({ booking, handleDelete }) => {
+const TableRow = ({ booking, handleDelete, handleBookingCinfirm }) => {
     const { user } = useContext(AuthContext);
     // eslint-disable-next-line react/prop-types
-    const { _id, date, email, img, price, title } = booking;
+    const { _id, date, email, img, price, title, ststus } = booking;
     
     return (
         <tr>
@@ -36,7 +36,12 @@ const TableRow = ({ booking, handleDelete }) => {
             </td>
             <td>{email}</td>
             <th>
-                <button className="bg-[#ff3438] px-4 py-1 text-white font-normal rounded-md">Pending</button>
+                {
+                    ststus === 'confirm' ? <span className="px-4 py-1 font-semibold border-2 border-green-800
+                    font-normal rounded-md">confirm</span> :
+                    <button onClick={() => handleBookingCinfirm(_id)} className="bg-[#ff3438] px-4 py-1 text-white
+                 font-normal rounded-md">Pending</button>
+                }
             </th>
         </tr>
     );

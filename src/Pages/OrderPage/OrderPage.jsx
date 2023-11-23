@@ -29,7 +29,7 @@ const OrderPage = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -39,11 +39,34 @@ const OrderPage = () => {
                             const remaining = bookins.filter(booking => booking._id !== id);
                             // console.log(remaining);
                             setBokkingd(remaining);
-                            
+
                         }
                     })
             }
         });
+    }
+
+    const handleBookingCinfirm = id => {
+        // console.log(id);
+        fetch(`http://localhost:5000/delete/${id}`, {
+            method: 'PATCH',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({ ststus: 'confirm' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire("Your service confirmed");
+                }
+                const remaining = bookins.filter(booking => booking._id !== id);
+                const updated = bookins.find(booking => booking._id === id);
+                updated.ststus = 'confirm';
+                const newBookings = [updated, ...remaining];
+                setBokkingd(newBookings);
+            })
     }
     return (
         <div className="max-w-7xl mx-auto">
@@ -66,7 +89,8 @@ const OrderPage = () => {
                         {
                             bookins.map(booking =>
                                 <TableRow key={booking._id}
-                                handleDelete={handleDelete}
+                                    handleDelete={handleDelete}
+                                    handleBookingCinfirm={handleBookingCinfirm}
                                     booking={booking}>
                                 </TableRow>)
                         }
