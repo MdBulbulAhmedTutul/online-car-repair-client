@@ -16,6 +16,8 @@ import DetailPage from './Pages/DetailsPage/DetailPage';
 import BookingPage from './Pages/BookingPage/BookingPage';
 import PrivateRouts from './components/routes/PrivateRouts';
 import OrderPage from './Pages/OrderPage/OrderPage';
+import AboutPages from './Pages/AboutPages/AboutPages';
+import ServicePages from './Pages/ServicePages/ServicePages';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: '/order',
         element: <PrivateRouts><OrderPage></OrderPage></PrivateRouts>
+      },
+      {
+        path: '/about',
+        element: <AboutPages></AboutPages>
+      },
+      {
+        path: '/servicesroutes',
+        element: <ServicePages></ServicePages>
       }
     ]
   },

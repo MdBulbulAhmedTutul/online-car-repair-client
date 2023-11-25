@@ -2,20 +2,23 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.svg';
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { MdNotificationsOff } from "react-icons/md";
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
     const navItem = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li className="ml-2"><NavLink to="/about">About</NavLink></li>
-        <li className="ml-2"><NavLink to="/services">Services</NavLink></li>
+        <li className="ml-2"><NavLink to="/servicesroutes">Services</NavLink></li>
         <li className="ml-2"><NavLink to="/order">Order</NavLink></li>
-        <li className="ml-2"><NavLink to="/contact">Contatct</NavLink></li>
+        <li className="ml-2"><NavLink to="/contact">
+            <MdNotificationsOff className="text-2xl text-[#ff3438]"></MdNotificationsOff>
+        </NavLink></li>
     </>
     const handleLogout = () => {
         logOutUser()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
     return (
         <div className="navbar bg-base-100">
@@ -40,9 +43,9 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ?
-                    <img className="w-[50px] rounded-full mr-2" src={user.photoURL} alt="" />
-                    :
-                    []
+                        <img className="w-[50px] rounded-full mr-2" src={user.photoURL} alt="" />
+                        :
+                        []
                 }
                 {
                     user ?
