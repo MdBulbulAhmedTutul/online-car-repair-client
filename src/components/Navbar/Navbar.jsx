@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li className="ml-2"><NavLink to="/about">About</NavLink></li>
         <li className="ml-2"><NavLink to="/servicesroutes">Services</NavLink></li>
-        <li className="ml-2"><NavLink to="/order">Order</NavLink></li>
+        <li className="ml-2"><NavLink to="/order">My-Order</NavLink></li>
         <li className="ml-2"><NavLink to="/contact">
             <MdNotificationsOff className="text-2xl text-[#ff3438]"></MdNotificationsOff>
         </NavLink></li>

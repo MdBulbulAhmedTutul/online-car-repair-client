@@ -19,18 +19,18 @@ const Footer = () => {
                         </div>
                     </div>
                     <div>
-                        <h2>About us</h2>
-                        <a href="">Home</a><br />
+                        <h2 className="text-2xl font-bold mb-3">About us</h2>
+                        <a  href="">Home</a><br />
                         <a href="">Service</a><br />
                         <a href="">Contact</a>
                     </div>
                     <div>
-                        <h2>Company</h2>
+                        <h2 className="text-2xl font-bold mb-3">Company</h2>
                         <a href="">Why car doctor</a><br />
                         <a href="">About</a>
                     </div>
                     <div>
-                        <h2>Support</h2>
+                        <h2 className="text-2xl font-bold mb-3">Support</h2>
                         <a href="">Support Center</a><br />
                         <a href="">Fedback</a><br />
                         <a href="">Accesbility</a>
