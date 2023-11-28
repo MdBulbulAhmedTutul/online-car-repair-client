@@ -4,7 +4,6 @@ import { FaGooglePlusG } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
-import axios from 'axios';
 const Login = () => {
     const { loginUser, googleLogin } = useContext(AuthContext);
     const location = useLocation();
@@ -19,20 +18,10 @@ const Login = () => {
         console.log(email, password);
         loginUser(email, password)
             .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-                const user = { email };
+                console.log(result.user)
                 Swal.fire("Login Successfully!");
+                navigate(location?.state ? location?.state : '/');
                 
-
-                // get access token
-                axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
-                    .then(res => {
-                        console.log(res.data);
-                        if(res.data.status){
-                            navigate(location?.state ? location?.state : '/');
-                        }
-                    })
             })
             .catch(error => {
                 console.error(error);
